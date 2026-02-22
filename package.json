@@ -1,0 +1,46 @@
+{
+  "name": "elysia-better-session",
+  "version": "0.9.0",
+  "description": "Server-side session plugin for Elysia with swappable store adapters.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "bun --watch example/server.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "bun -e \"import { rm } from 'node:fs/promises'; await rm('dist', { recursive: true, force: true });\"",
+    "build": "bun run clean && tsc -p tsconfig.build.json",
+    "prepublishOnly": "bun run test && bun run typecheck && bun run build"
+  },
+  "dependencies": {
+    "drizzle-orm": "latest"
+  },
+  "peerDependencies": {
+    "elysia": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "elysia": "latest",
+    "typescript": "latest"
+  }
+}
