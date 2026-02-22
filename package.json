@@ -1,7 +1,16 @@
 {
   "name": "elysia-better-session",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Server-side session plugin for Elysia with swappable store adapters.",
+  "keywords": ["elysia", "bun", "session", "backend", "server"],
+  "author": {
+    "name": "0x0arash",
+    "url": "https://github.com/0x0arash"
+  },
+  "homepage": "https://github.com/0x0arash/elysia-better-session",
+  "repository": {
+    "url": "https://github.com/0x0arash/elysia-better-session"
+  },
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
