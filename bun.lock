@@ -4,15 +4,13 @@
   "workspaces": {
     "": {
       "name": "elysia-better-session",
-      "dependencies": {
-        "drizzle-orm": "latest",
-      },
       "devDependencies": {
         "@types/bun": "latest",
         "elysia": "latest",
         "typescript": "latest",
       },
       "peerDependencies": {
+        "drizzle-orm": "^0.45.1",
         "elysia": "^1.4.0",
       },
     },
