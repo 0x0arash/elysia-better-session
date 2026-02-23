@@ -56,7 +56,7 @@ const app = new Elysia()
     })
   )
   .get('/', ({ session }) => {
-    session.set('visits', (session.get('visits') ?? 0) + 1)
+    session.set('visits', session.get('visits') + 1)
 
     return {
       visits: session.get('visits'),
@@ -426,13 +426,13 @@ bun run prepublishOnly
 
 ```bash
 npm login
-npm publish --access public
+bun publish --access public
 ```
 
 Notes:
 
 - This package publishes `dist/`, `README.md`, and `LICENSE`.
-- Runtime dependency for Elysia is declared as a peer dependency, so consumer projects must install `elysia`.
+- Runtime dependency for Elysia and drizzle-orm is declared as a peer dependency, so consumer projects must install `elysia` package and if using the drizzle store adapter the `drizzle-orm` package.
 
 ## Repository Structure
 

@@ -76,7 +76,7 @@ export interface SessionContext<TSession extends JsonObject = JsonObject> {
   /** Readonly view of session data. */
   readonly data: Readonly<TSession>
   /** Read one key from session data. */
-  get<TKey extends keyof TSession>(key: TKey): TSession[TKey] | undefined
+  get<TKey extends keyof TSession>(key: TKey): TSession[TKey]
   /** Check whether a key exists in session data. */
   has(key: keyof TSession): boolean
   /** Set one key and mark session dirty. */

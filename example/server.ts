@@ -24,7 +24,7 @@ const app = new Elysia()
     })
   )
   .get('/', ({ session }) => {
-    const visits = (session.get('visits') ?? 0) + 1
+    const visits = session.get('visits') + 1
     session.set('visits', visits)
 
     return {
